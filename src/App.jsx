@@ -25,6 +25,7 @@ function App() {
       showAlert(true, 'danger', 'please enter value')
     }
     else if (name && isEditing) {
+      // set edit 
       setList(list.map((item) => {
         if (item.id === editId) {
           return { ...item, title: name }
@@ -37,6 +38,7 @@ function App() {
       showAlert(true, 'success', 'value chnaged')
     }
     else {
+      //set alert
       showAlert(true, 'success', 'item added into list')
       const newItem = { id: new Date().getTime().toString(), title: name }
       setList([...list, newItem])
@@ -74,7 +76,7 @@ function App() {
     <section className="section-center">
       <form className='gorcery-form' onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
-        <h3>gorocery bud</h3>
+        <h3>Grocery bud</h3>
         <div className="form-control">
           <input type="text" className='gorocery'
             placeholder='e.g. eggs'
